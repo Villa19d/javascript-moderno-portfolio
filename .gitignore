@@ -1,0 +1,22 @@
+# 1. Ignorar absolutamente todo por defecto
+/*
+
+# 2. EXCEPCIONES: Archivos que SÍ quieres subir en la raíz
+!README.md
+!certificado.pdf
+!.gitignore
+
+# 3. EXCEPCIONES: Las carpetas de tus 4 proyectos "Campeones"
+# Nota: Usa los nombres exactos que tienen tus carpetas actualmente
+!15-PROYECTO-Carrito/
+!39-PROYECTO-Criptomonedas/
+!56-FullStack JS - Proyect MERN- MongoDB React Node y Tailwind/
+!57-Administrador de Citas Typescript/
+
+# 4. REGLAS DE SEGURIDAD INTERNA (Aún en las excepciones)
+# Evita subir basura técnica o archivos sensibles dentro de esos proyectos
+**/node_modules/
+**/.env
+**/.DS_Store
+**/dist/
+**/build/
