@@ -12,10 +12,10 @@
 !39-PROYECTO-Criptomonedas/
 !56-FullStackJS-Proyect MERN-MongoDBReactNodeyTailwind/
 !57-Administrador-de-Citas-Typescript/
+!57-Administrador-de-Citas-Typescript/56-admin-pacientes-ts/dist
 
 # 4. REGLAS DE SEGURIDAD INTERNA (Aún en las excepciones)
 # Evita subir basura técnica o archivos sensibles dentro de esos proyectos
 **/node_modules/
 **/.env
 **/.DS_Store
-**/build/
