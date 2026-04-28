@@ -5,7 +5,7 @@
 
 ## 📋 Sobre este repositorio
 
-Este repositorio contiene **todos los proyectos** que desarrollé durante el curso *"JavaScript Moderno - Guía Definitiva"* de Juan Pablo de la Torre.
+Este repositorio contiene **algunos de los proyectos mas importantes** que desarrollé durante el curso *"JavaScript Moderno - Guía Definitiva"* de Juan Pablo de la Torre.
 
 Cada proyecto está en su propia carpeta con código comentado y documentación.
 
