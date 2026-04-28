@@ -19,7 +19,7 @@ Cada proyecto está en su propia carpeta con código comentado, documentación y
 |---|----------|-------------|------|-------------|
 | 1 | 🛒 **Carrito de Compras** | HTML5, CSS3, JavaScript Vanilla, DOM, Eventos | [🔗 Ver Demo](https://rodrigo-villar-portfolio.netlify.app/15-PROYECTO-Carrito/) | [📁 Ver código](./15-PROYECTO-Carrito/) |
 | 2 | ₿ **Buscador de Criptomonedas** | Fetch API, Async/Await, REST API, Tailwind CSS | [🔗 Ver Demo](https://rodrigo-villar-portfolio.netlify.app/39-PROYECTO-Criptomonedas/) | [📁 Ver código](./39-PROYECTO-Criptomonedas/) |
-| 3 | 📅 **Administrador de Citas (TypeScript)** | TypeScript, Vite, Tailwind CSS, LocalStorage | [🔗 Ver Demo](https://rodrigo-villar-portfolio.netlify.app/57-Administrador-de%20Citas-Typescript/56-admin-pacientes-ts/dist/) | [📁 Ver código](./57-Administrador-de%20Citas-Typescript/) |
+| 3 | 📅 **Administrador de Citas (TypeScript)** | TypeScript, Vite, Tailwind CSS, LocalStorage | [🔗 Ver Demo](https://rodrigo-villar-portfolio.netlify.app/57-Administrador-de-Citas-Typescript/56-admin-pacientes-ts/dist/) | [📁 Ver código](./57-Administrador-de%20Citas-Typescript/) |
 | 4 | 🏥 **APV - Veterinaria MERN (Full Stack)** | React 19, Node.js, Express, MongoDB, JWT, Tailwind CSS, Vite | [🔗 Ver Demo](https://adminpacientesmern.netlify.app) | [📁 Ver código](./56-FullStack%20JS%20-%20Proyect%20MERN-%20MongoDB%20React%20Node%20y%20Tailwind/) |
 
 ---
