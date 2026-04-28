@@ -1,0 +1,11 @@
+# Ignorar dependencias
+backend/node_modules/
+frontend/node_modules/
+
+# Ignorar variables de entorno (SEGURIDAD)
+**/.env
+
+# Ignorar carpetas de build y logs
+frontend/dist/
+*.log
+.DS_Store
