@@ -19,8 +19,11 @@ const corsOptions = {
             process.env.FRONTEND_URL
         ];
 
-        // Verifica que el origen actual esté en los dominios permitidos (limpiando espacios por si acaso)
-        if (!origin || dominiosPermitidos.some(dominio => dominio?.trim() === origin?.trim())) {
+        // Limpia comillas, espacios y barras diagonales finales para evitar cualquier error de sintaxis en Render
+        const cleanDominio = (url) => url?.replace(/['"]/g, '').replace(/\/$/, '').trim();
+
+        // Verifica que el origen actual esté en los dominios permitidos
+        if (!origin || dominiosPermitidos.some(dominio => cleanDominio(dominio) === cleanDominio(origin))) {
             callback(null, true);
         } else {
             console.error(`⚠️ Origen bloqueado por CORS: ${origin}`);
