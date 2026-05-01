@@ -13,18 +13,24 @@ const app = express();
 // 2. Conectar a la DB
 connectDB();
 
-const dominiosPermitidos = [process.env.FRONTEND_URL];
-
 const corsOptions = {
     origin: function (origin, callback) {
-        // Permitir peticiones sin origen (como Postman o Server-to-Server pings) 
-        // O si el origen está en nuestra lista blanca
-        if (!origin || dominiosPermitidos.indexOf(origin) !== -1) {
+        const dominiosPermitidos = [
+            process.env.FRONTEND_URL
+        ];
+
+        // Verifica que el origen actual esté en los dominios permitidos (limpiando espacios por si acaso)
+        if (!origin || dominiosPermitidos.some(dominio => dominio?.trim() === origin?.trim())) {
             callback(null, true);
         } else {
-            callback(new Error("Acceso a la API no permitido desde ese dominio por Cors"), false);
+            console.error(`⚠️ Origen bloqueado por CORS: ${origin}`);
+            callback(new Error("Acceso a la API no permitido desde ese dominio por Cors"));
         }
-    }
+    },
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true, // Habilita el envío de cookies o headers de autorización si los usas
+    optionsSuccessStatus: 200 // Algunos navegadores legacy (IE11, varios SmartTVs) se bloquean con 204
 };
 
 app.use(cors(corsOptions));
