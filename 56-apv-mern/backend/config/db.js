@@ -9,8 +9,8 @@ dotenv.config();
         const url = `${db.connection.host}:${db.connection.port}`;
         console.log(`MongoDB URL: ${url}`);
     } catch (error) {
-        console.error(error);
-        process.exit(1);
+        console.error(`Error de conexion a MongoDB: ${error.message}`);
+        // No usamos process.exit(1) en Vercel para evitar FUNCTION_INVOCATION_FAILED
     }
 }
 
