@@ -2,7 +2,7 @@
 
 [![Netlify](https://img.shields.io/badge/Netlify-Portafolio_Desplegado-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://rodrigo-villar-portfolio.netlify.app)
 [![GitHub](https://img.shields.io/badge/GitHub-Repositorio-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/tu-usuario/javascript-moderno-portfolio)
-[![Render](https://img.shields.io/badge/Render-Backend_Desplegado-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://tu-backend.onrender.com)
+[![Vercel](https://img.shields.io/badge/Vercel-Backend_Desplegado-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://javascript-moderno-portfolio.vercel.app)
 
 ## 📋 Sobre este repositorio
 
@@ -20,7 +20,7 @@ Cada proyecto está en su propia carpeta con código comentado, documentación y
 | 1 | 🛒 **Carrito de Compras** | HTML5, CSS3, JavaScript Vanilla, DOM, Eventos | [🔗 Ver Demo](https://rodrigo-villar-portfolio.netlify.app/15-PROYECTO-Carrito/) | [📁 Ver código](./15-PROYECTO-Carrito/) |
 | 2 | ₿ **Buscador de Criptomonedas** | Fetch API, Async/Await, REST API, Tailwind CSS | [🔗 Ver Demo](https://rodrigo-villar-portfolio.netlify.app/39-PROYECTO-Criptomonedas/) | [📁 Ver código](./39-PROYECTO-Criptomonedas/) |
 | 3 | 📅 **Administrador de Citas (TypeScript)** | TypeScript, Vite, Tailwind CSS, LocalStorage | [🔗 Ver Demo](https://rodrigo-villar-portfolio.netlify.app/57-Administrador-de-Citas-Typescript/56-admin-pacientes-ts/dist/) | [📁 Ver código](./57-Administrador-de%20Citas-Typescript/) |
-| 4 | 🏥 **APV - Veterinaria MERN (Full Stack)** | React 19, Node.js, Express, MongoDB, JWT, Tailwind CSS, Vite | [🔗 Ver Demo](https://adminpacientesmern.netlify.app) | [📁 Ver código](./56-FullStack%20JS%20-%20Proyect%20MERN-%20MongoDB%20React%20Node%20y%20Tailwind/) |
+| 4 | 🏥 **APV - Veterinaria MERN (Full Stack)** | React 19, Node.js, Express, MongoDB, JWT, Tailwind CSS, Vite, Vercel Serverless | [🔗 Ver Demo](https://adminpacientesmern.netlify.app) | [📁 Ver código](./56-apv-mern/) |
 
 ---
 
@@ -29,23 +29,13 @@ Cada proyecto está en su propia carpeta con código comentado, documentación y
 | Categoría | Tecnologías |
 |-----------|-------------|
 | **Frontend** | React 19, React Router v7, Tailwind CSS v4, Vite, TypeScript |
-| **Backend** | Node.js, Express, JWT, bcrypt, Nodemailer |
+| **Backend** | Node.js, Express, JWT, bcrypt, Nodemailer, Vercel Serverless |
 | **Base de Datos** | MongoDB Atlas, Mongoose |
 | **APIs** | Fetch API, REST API, Async/Await |
-| **Despliegue** | Netlify (Frontend), Render (Backend) |
+| **Email** | Nodemailer + SMTP (Gmail real / Mailtrap) |
+| **Despliegue** | Netlify (Frontend), Vercel (Backend Serverless) |
 | **Control de versiones** | Git, GitHub |
 
----
-
-## 📸 Capturas de pantalla
-
-| Carrito de Compras | Buscador de Criptomonedas |
-|:---:|:---:|
-| ![Carrito Demo](./15-PROYECTO-Carrito/screenshot.png) | ![Criptomonedas Demo](./39-PROYECTO-Criptomonedas/screenshot.png) |
-
-| Administrador de Citas (TS) | APV - Veterinaria MERN |
-|:---:|:---:|
-| ![TypeScript Demo](./57-Administrador-de%20Citas-Typescript/screenshot.png) | ![MERN Demo](./56-FullStack%20JS%20-%20Proyect%20MERN-%20MongoDB%20React%20Node%20y%20Tailwind/screenshot.png) |
 
 ---
 
@@ -71,14 +61,14 @@ Cada proyecto está en su propia carpeta con código comentado, documentación y
 
 ### 🏥 APV - Veterinaria MERN (Full Stack)
 - Autenticación completa (Registro, Login, JWT)
-- Confirmación de cuenta por email (Nodemailer + Mailtrap)
-- Recuperación de contraseña
+- Confirmación de cuenta por **email real** (Nodemailer + SMTP Gmail)
+- Recuperación de contraseña por email
 - CRUD completo de pacientes
 - Rutas protegidas (React Router v7)
 - Context API para autenticación y pacientes
-- Custom hooks (useAuth, usePacientes)
+- Custom hooks (`useAuth`, `usePacientes`)
 - Middleware de autenticación en backend
-- Despliegue profesional (Netlify + Render)
+- **Despliegue profesional:** Netlify (frontend) + Vercel Serverless Functions (backend)
 
 ---
 
@@ -88,7 +78,7 @@ Cada proyecto está en su propia carpeta con código comentado, documentación y
 |-------|------------|
 | **JavaScript Moderno - Guía Definitiva** | Juan Pablo de la Torre |
 
-[📜 Ver certificado](./certificado.pdf)
+[📜 Ver certificado](https://www.udemy.com/certificate/UC-77c87387-1516-4775-99bf-6f29d39997c1/)
 
 ---
 
@@ -96,17 +86,17 @@ Cada proyecto está en su propia carpeta con código comentado, documentación y
 
 | Red | Enlace |
 |-----|--------|
-| **LinkedIn** | [linkedin.com/in/rodrigo-villar](https://linkedin.com/in/rodrigo-villar) |
-| **GitHub** | [github.com/tu-usuario](https://github.com/tu-usuario) |
-| **Portafolio** | [rodrigo-villar-portfolio.netlify.app](https://rodrigo-villar-portfolio.netlify.app) |
+| **LinkedIn** | [linkedin.com/in/rodrigo-villar](www.linkedin.com/in/luis-rodrigo-del-villar-morales-720810325) |
+| **GitHub** | [github.com/tu-usuario]([https://github.com/tu-usuario](https://github.com/Villa19d)) |
+
 
 ---
 
 ## 📄 Licencia
 
 Este proyecto está bajo la licencia **MIT**.  
-Siente libre de usarlo como referencia para tu propio aprendizaje.
+Siéntete libre de usarlo como referencia para tu propio aprendizaje.
 
 ---
 
-⭐ *Si te gustó este portafolio, no olvides darle una estrella en GitHub.*
+⭐ *Si te gustó este portafolio, no olvides darle una estrella en GitHub. Graciaas :)*
