@@ -11,12 +11,12 @@ Aplicación fullstack MERN para gestionar pacientes de una clínica veterinaria.
 | Capa | Tecnología |
 |---|---|
 | Frontend | React 19, React Router v7, Tailwind CSS v4, Vite |
-| Backend | Node.js, Express |
+| Backend | Node.js, Express (Serverless Functions) |
 | Base de datos | MongoDB Atlas + Mongoose |
 | Autenticación | JWT (jsonwebtoken) + bcrypt |
-| Email | Nodemailer + Mailtrap |
+| Email | Nodemailer + SMTP (Gmail/Mailtrap) |
 | Deploy Frontend | Netlify |
-| Deploy Backend | Render |
+| Deploy Backend | Vercel |
 
 ---
 
@@ -134,17 +134,17 @@ npm run dev
 
 ## Deploy
 
-### Backend → Render
-1. Conectar el repositorio en [render.com](https://render.com)
-2. Build command: `npm install`
-3. Start command: `node index.js`
-4. Agregar las variables de entorno del `.env` en el panel de Render
+### Backend → Vercel
+1. Conectar el repositorio en [vercel.com](https://vercel.com)
+2. El proyecto cuenta con un archivo `vercel.json` configurado con `rewrites` para apuntar al archivo `api/index.js` y hacer funcionar Express con Vercel Serverless Functions.
+3. Asegurarse de agregar todas las variables de entorno (`MONGO_URI`, `JWT_SECRET`, credenciales de `EMAIL_*`, etc.) en el panel de **Vercel -> Settings -> Environment Variables**.
+4. ¡Importante! Configurar la IP `0.0.0.0/0` en MongoDB Atlas (Network Access) para permitir que Vercel se conecte correctamente.
 
 ### Frontend → Netlify
 1. Conectar el repositorio en [netlify.com](https://netlify.com)
 2. Build command: `npm run build`
 3. Publish directory: `dist`
-4. Agregar variable de entorno: `VITE_REACT_APP_BACKEND_URL=https://tu-backend.onrender.com/api`
+4. Agregar variable de entorno: `VITE_REACT_APP_BACKEND_URL=https://tu-backend.vercel.app/api`
 5. El archivo `public/_redirects` con `/* /index.html 200` ya está incluido para que el routing de React funcione correctamente
 
 ---
