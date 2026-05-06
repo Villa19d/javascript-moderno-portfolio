@@ -87,7 +87,7 @@ Cada proyecto está en su propia carpeta con código comentado, documentación y
 | Red | Enlace |
 |-----|--------|
 | **LinkedIn** | [linkedin.com/in/rodrigo-villar](www.linkedin.com/in/luis-rodrigo-del-villar-morales-720810325) |
-| **GitHub** | [github.com/Villa19d]([https://github.com/tu-usuario](https://github.com/Villa19d)) |
+| **GitHub** | [github.com/Villa19d](https://github.com/tu-usuario](https://github.com/Villa19d)) |
 
 
 ---
