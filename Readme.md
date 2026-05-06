@@ -1,4 +1,4 @@
-# 🚀 JavaScript Moderno - Portafolio de Proyectos
+# JavaScript Moderno - Portafolio de Proyectos
 
 [![Netlify](https://img.shields.io/badge/Netlify-Portafolio_Desplegado-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://rodrigo-villar-portfolio.netlify.app)
 [![GitHub](https://img.shields.io/badge/GitHub-Repositorio-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/tu-usuario/javascript-moderno-portfolio)
