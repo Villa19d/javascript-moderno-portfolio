@@ -9,11 +9,10 @@ const objetoBusqueda = {
     criptomoneda: ''
 }
 
-//first of all lets create a Promise
-const obtenerCriptomonedas = criptomonedas => new Promise(resolve =>{
-    resolve(criptomonedas)
-});
-
+// CoinGecko ofrece una API pública sin clave.
+// Antes se usaba CryptoCompare, pero ahora exige API key y responde 401,
+// por eso la lista de criptomonedas nunca cargaba.
+const COINGECKO_URL = 'https://api.coingecko.com/api/v3';
 
 document.addEventListener('DOMContentLoaded', ()=>{
     consultarCriptoMonedas()
@@ -25,27 +24,28 @@ document.addEventListener('DOMContentLoaded', ()=>{
 })
 
 async function consultarCriptoMonedas(){
-    const url ='https://min-api.cryptocompare.com/data/top/mktcapfull?limit=10&tsym=USD';
+    const url = `${COINGECKO_URL}/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1`;
 
     try{
-    const getFetch = await fetch(url)
-    const getJson = await getFetch.json()
-    const getCriptomonedas = await obtenerCriptomonedas(getJson.Data)
-    
-        selectCripto(getCriptomonedas) 
+        const respuesta = await fetch(url);
+        if(!respuesta.ok){
+            throw new Error(`Error al consultar la API: ${respuesta.status}`);
+        }
+        const criptomonedas = await respuesta.json();
+        selectCripto(criptomonedas);
    }catch(error){
-    console.log(error)
+        console.log(error);
+        mostrarAlerta('No se pudieron cargar las criptomonedas, intenta de nuevo');
    }
 }
 
 function selectCripto(criptomonedas){
     criptomonedas.forEach(cripto =>{
-        
-        const {FullName, Name} = cripto.CoinInfo;
+        const {name, id} = cripto;
         const option = document.createElement('OPTION');
-        option.value = Name
-        option.textContent = FullName;
-        criptomonedasSelect.appendChild(option)
+        option.value = id;
+        option.textContent = name;
+        criptomonedasSelect.appendChild(option);
     })
 }
 
@@ -61,48 +61,59 @@ function submitFormulario(e){
         mostrarAlerta('Ambos campos deben estar seleccionados')
         return;
     }
-    //Consultar la API con los reusltados
+    //Consultar la API con los resultados
     consultarAPI();
 }
 
 async function consultarAPI(){
     const {moneda, criptomoneda} = objetoBusqueda;
-    const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${criptomoneda}&tsyms=${moneda}`
+    const url = `${COINGECKO_URL}/coins/markets?vs_currency=${moneda.toLowerCase()}&ids=${criptomoneda}&price_change_percentage=24h`;
 
     mostrarSpinner();
     try{
-        const getFetch = await fetch(url);
-        const getFetchJson = await getFetch.json();
-        mostrarHTML(getFetchJson.DISPLAY[criptomoneda][moneda])
-        
+        const respuesta = await fetch(url);
+        if(!respuesta.ok){
+            throw new Error(`Error al consultar la API: ${respuesta.status}`);
+        }
+        const datos = await respuesta.json();
+        if(!datos.length){
+            throw new Error('Sin datos para esa criptomoneda');
+        }
+        mostrarHTML(datos[0], moneda);
     }catch(error){
-      console.log(error)
+        console.log(error);
+        limpiarHTML(resultado);
+        mostrarAlerta('No se pudo obtener la cotización, intenta de nuevo');
     }
 }
 
-function mostrarHTML(infoCotizando){
-    limpiarHTML(resultado)
-    const {PRICE, HIGHDAY,LOWDAY,CHANGEPCT24HOUR,LASTUPDATE}=infoCotizando;
+function mostrarHTML(cripto, moneda){
+    limpiarHTML(resultado);
+    const {current_price, high_24h, low_24h, price_change_percentage_24h, last_updated} = cripto;
+
+    const formatoPrecio = (valor) => `${moneda} ${valor.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+
     const precio = document.createElement('p');
     precio.classList.add('precio');
-    precio.innerHTML = `El Precio es: <span>${PRICE}</span>`;
+    precio.innerHTML = `El Precio es: <span>${formatoPrecio(current_price)}</span>`;
 
     const precioAlto = document.createElement('p');
-    precioAlto.innerHTML = `<p>Precio mas alto del día <span>${HIGHDAY}</span></p>`
-    
+    precioAlto.innerHTML = `<p>Precio mas alto del día <span>${formatoPrecio(high_24h)}</span></p>`
+
     const precioBajo = document.createElement('p');
-    precioBajo.innerHTML = `<p>Precio mas bajo del día <span>${LOWDAY}</span></p>`
-    
+    precioBajo.innerHTML = `<p>Precio mas bajo del día <span>${formatoPrecio(low_24h)}</span></p>`
+
     const ultimasHoras = document.createElement('p');
-    ultimasHoras.innerHTML = `<p>Variación en ultimas 24 hrs. <span>${CHANGEPCT24HOUR}</span></p>`
-    
+    ultimasHoras.innerHTML = `<p>Variación en ultimas 24 hrs. <span>${price_change_percentage_24h.toFixed(2)}%</span></p>`
+
     const lastUpdate = document.createElement('p');
-    lastUpdate.innerHTML = `<p>Última actualización: <span>${LASTUPDATE}</span></p>`
+    lastUpdate.innerHTML = `<p>Última actualización: <span>${new Date(last_updated).toLocaleString('es-MX')}</span></p>`
 
     resultado.appendChild(precio);
     resultado.appendChild(precioAlto);
     resultado.appendChild(precioBajo);
     resultado.appendChild(ultimasHoras);
+    resultado.appendChild(lastUpdate);
 }
 
 function mostrarAlerta(mensaje){
