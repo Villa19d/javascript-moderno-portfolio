@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portafolio JavaScript Moderno — Rodrigo del Villar</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: #0f172a; color: #e2e8f0; min-height: 100vh; display: flex; flex-direction: column; }
+  header { text-align: center; padding: 3rem 1rem 1rem; }
+  header h1 { font-size: 2rem; margin-bottom: .5rem; }
+  header p { color: #94a3b8; max-width: 560px; margin: 0 auto; }
+  main { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; padding: 2rem 1.5rem; max-width: 960px; width: 100%; margin: 0 auto; }
+  .card { display: block; background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 1.5rem; text-decoration: none; color: inherit; transition: transform .15s ease, border-color .15s ease; }
+  .card:hover { transform: translateY(-3px); border-color: #38bdf8; }
+  .card h2 { font-size: 1.2rem; margin-bottom: .5rem; }
+  .card p { color: #94a3b8; font-size: .95rem; line-height: 1.5; }
+  footer { text-align: center; padding: 1.5rem; color: #94a3b8; margin-top: auto; }
+  footer a { color: #38bdf8; text-decoration: none; margin: 0 .5rem; }
+  footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Portafolio JavaScript Moderno</h1>
+    <p>Proyectos del curso “JavaScript Moderno - Guía Definitiva” de Juan Pablo de la Torre.</p>
+  </header>
+  <main>
+    <a class="card" href="./15-PROYECTO-Carrito/">
+      <h2>🛒 Carrito de Compras</h2>
+      <p>HTML5, CSS3, JavaScript Vanilla, DOM, LocalStorage.</p>
+    </a>
+    <a class="card" href="./39-PROYECTO-Criptomonedas/">
+      <h2>₿ Buscador de Criptomonedas</h2>
+      <p>Fetch API, Async/Await, REST API (CoinGecko), Tailwind CSS.</p>
+    </a>
+    <a class="card" href="./57-Administrador-de-Citas-Typescript/56-admin-pacientes-ts/dist/">
+      <h2>📅 Administrador de Citas (TypeScript)</h2>
+      <p>TypeScript, Vite, Tailwind CSS, LocalStorage.</p>
+    </a>
+    <a class="card" href="https://adminpacientesmern.netlify.app">
+      <h2>🏥 APV - Veterinaria MERN</h2>
+      <p>React 19, Node.js, Express, MongoDB, JWT, Tailwind CSS.</p>
+    </a>
+  </main>
+  <footer>
+    <a href="https://github.com/Villa19d/javascript-moderno-portfolio">Ver código en GitHub</a> ·
+    <a href="https://www.linkedin.com/in/luis-rodrigo-del-villar-morales-720810325">LinkedIn</a>
+  </footer>
+</body>
+</html>

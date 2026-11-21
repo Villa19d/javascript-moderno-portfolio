@@ -3,6 +3,7 @@
 
 # 2. EXCEPCIONES: Archivos que SÍ quieres subir en la raíz
 !README.md
+!index.html
 !certificado.pdf
 !.gitignore
 

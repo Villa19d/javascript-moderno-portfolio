@@ -18,7 +18,7 @@ Cada proyecto está en su propia carpeta con código comentado, documentación y
 | # | Proyecto | Tecnologías | Demo | Repositorio |
 |---|----------|-------------|------|-------------|
 | 1 | 🛒 **Carrito de Compras** | HTML5, CSS3, JavaScript Vanilla, DOM, Eventos | [🔗 Ver Demo](https://rodrigo-villar-portfolio.netlify.app/15-PROYECTO-Carrito/) | [📁 Ver código](./15-PROYECTO-Carrito/) |
-| 2 | ₿ **Buscador de Criptomonedas** | Fetch API, Async/Await, REST API, Tailwind CSS | [🔗 Ver Demo](https://rodrigo-villar-portfolio.netlify.app/39-PROYECTO-Criptomonedas/) | [📁 Ver código](./39-PROYECTO-Criptomonedas/) |
+| 2 | ₿ **Buscador de Criptomonedas** | Fetch API, Async/Await, REST API (CoinGecko, sin API key), Tailwind CSS | [🔗 Ver Demo](https://rodrigo-villar-portfolio.netlify.app/39-PROYECTO-Criptomonedas/) | [📁 Ver código](./39-PROYECTO-Criptomonedas/) |
 | 3 | 📅 **Administrador de Citas (TypeScript)** | TypeScript, Vite, Tailwind CSS, LocalStorage | [🔗 Ver Demo](https://rodrigo-villar-portfolio.netlify.app/57-Administrador-de-Citas-Typescript/56-admin-pacientes-ts/dist/) | [📁 Ver código](./57-Administrador-de%20Citas-Typescript/) |
 | 4 | 🏥 **APV - Veterinaria MERN (Full Stack)** | React 19, Node.js, Express, MongoDB, JWT, Tailwind CSS, Vite, Vercel Serverless | [🔗 Ver Demo](https://adminpacientesmern.netlify.app) | [📁 Ver código](./56-apv-mern/) |
 
@@ -48,7 +48,7 @@ Cada proyecto está en su propia carpeta con código comentado, documentación y
 - Diseño responsive
 
 ### ₿ Buscador de Criptomonedas
-- Consumo de API REST de criptomonedas
+- Consumo de API REST de criptomonedas (CoinGecko, API pública sin clave)
 - Conversión en tiempo real
 - Manejo de promesas con Async/Await
 - Validación de formularios
